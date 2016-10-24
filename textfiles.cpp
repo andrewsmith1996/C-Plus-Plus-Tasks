@@ -12,50 +12,32 @@
 int main() {
     
     using namespace std;
+   
+    //Writing to a text file
+    ofstream myTextFile;
     
-    //Write to a Text File
-    fstream myFile;
+    myTextFile.open("test.txt", ios::out);
+    myTextFile << "Hello World!";
+    myTextFile.close();
     
-    myFile.open("test.txt", ios::out);
-    myFile << "Hello World!";
-    myFile.close();
+    //Reading from a File
+    ifstream file;
     
-    //Reading from a Text File
-    fstream readFile;
-    
-    readFile.open("hello.txt", ios::in);
+    file.open("example.txt", ios::in);
     
     string var;
-    
-    readFile >> var;
-    
-    myFile.close();
+   
+    file >> var;
+  
+    file.close();
     
     cout << var << endl;
-    
-    //Appending to a text file
-    
-    fstream appFile;
-    
-    appFile.open("hello.txt", ios::app);
-    
-    appFile << "world";
-    appFile.close();
-    
-    //Use .eof() to detect end of file
-    
-    //Get the lines into an array until it reaches \n
-    file.getline(str, 80, '\n');
-    
-    string line[10];
-    
-    getline(file line[i];
-    
-    
   
-    
-    
-    
+    //Appending to a text file
+    ofstream appFile;
+    appFile.open("example.txt", ios::app);
+    appFile << "\nHow are you?";
+    appFile.close();
     
     return 0;
 }
