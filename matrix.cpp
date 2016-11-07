@@ -10,8 +10,8 @@
 #include <array>
 #include <time.h>
 
-#define rows 6
-#define cols 6
+#define rows 7
+#define cols 7
 
 using namespace std;
 
@@ -73,7 +73,8 @@ public:
         
         for(int col = 0; col < cols; col++){
             for(int row = 0; row < rows; row++){
-                arr1D[col * cols + row] = arr[col][row];
+                arr1D[count] = arr[col][row];
+                count++;
             }
         }
     }
@@ -112,7 +113,7 @@ public:
     }
     
     void getVal(int col, int row){
-        cout << "Contents is " << arr1D[col + row * rows] << endl;
+        cout << "Contents is " << arr1D[col + (row * rows)] << endl;
     }
     
     
@@ -148,7 +149,7 @@ int main(){
     myMatrix->print2D();
     
     cout << endl;
-    cout << "Elements from 1D Array at 2,3:" << endl;
+    cout << "Elements from 1D Array at 2, 3:" << endl;
     myMatrix->getVal(2,3);
     
     cout << endl;
